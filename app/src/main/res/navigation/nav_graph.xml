@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/arabicRootsFragment3">
+    <fragment
+        android:id="@+id/ayatListFragment3"
+        android:name="com.example.quran.fragments.AyatListFragment"
+        android:label="fragment_ayat_list"
+        tools:layout="@layout/fragment_ayat_list" >
+        <action
+            android:id="@+id/action_ayatListFragment3_to_ayaDetailFragment2"
+            app:destination="@id/ayaDetailFragment2" />
+        <action
+            android:id="@+id/action_ayatListFragment3_to_settingFragment3"
+            app:destination="@id/settingFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayaDetailFragment2"
+        android:name="com.example.quran.fragments.AyaDetailFragment"
+        android:label="fragment_aya_detail"
+        tools:layout="@layout/fragment_aya_detail" >
+        <action
+            android:id="@+id/action_ayaDetailFragment2_to_mushafPageFragment2"
+            app:destination="@id/mushafPageFragment2" />
+        <action
+            android:id="@+id/action_ayaDetailFragment2_to_tafssirFragment2"
+            app:destination="@id/tafssirFragment2" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.quran.models.QuranWord" />
+    </fragment>
+    <fragment
+        android:id="@+id/mushafPageFragment2"
+        android:name="com.example.quran.fragments.MushafPageFragment"
+        android:label="fragment_mushaf_page"
+        tools:layout="@layout/fragment_mushaf_page" />
+    <fragment
+        android:id="@+id/indexFragment2"
+        android:name="com.example.quran.fragments.IndexFragment"
+        android:label="fragment_index"
+        tools:layout="@layout/fragment_index" >
+        <action
+            android:id="@+id/action_indexFragment2_to_mushafPageFragment2"
+            app:destination="@id/mushafPageFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/arabicRootsFragment3"
+        android:name="com.example.quran.fragments.ArabicRootsFragment"
+        android:label="fragment_arabic_roots"
+        tools:layout="@layout/fragment_arabic_roots" >
+        <action
+            android:id="@+id/action_arabicRootsFragment3_to_ayatListFragment3"
+            app:destination="@id/ayatListFragment3" />
+        <action
+            android:id="@+id/action_arabicRootsFragment3_to_resultAyaListFragment"
+            app:destination="@id/resultAyaListFragment" />
+        <action
+            android:id="@+id/action_arabicRootsFragment3_to_tafssirFragment2"
+            app:destination="@id/tafssirFragment2" />
+        <action
+            android:id="@+id/action_arabicRootsFragment3_to_favoriteFragment3"
+            app:destination="@id/favoriteFragment3" />
+        <action
+            android:id="@+id/action_arabicRootsFragment3_to_settingFragment3"
+            app:destination="@id/settingFragment3" />
+        <action
+            android:id="@+id/action_arabicRootsFragment3_to_indexFragment2"
+            app:destination="@id/indexFragment2" />
+        <action
+            android:id="@+id/action_arabicRootsFragment3_to_ayaDetailFragment2"
+            app:destination="@id/ayaDetailFragment2" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.quran.models.Racine" />
+    </fragment>
+    <fragment
+        android:id="@+id/tafssirFragment2"
+        android:name="com.example.quran.fragments.TafssirFragment"
+        android:label="fragment_tafssir"
+        tools:layout="@layout/fragment_tafssir" >
+        <argument
+            android:name="ayaDet"
+            app:argType="com.example.quran.models.AyaRef" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment3"
+        android:name="com.example.quran.fragments.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment3_to_mushafPageFragment2"
+            app:destination="@id/mushafPageFragment2" />
+        <action
+            android:id="@+id/action_favoriteFragment3_to_ayaDetailFragment2"
+            app:destination="@id/ayaDetailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment3"
+        android:name="com.example.quran.fragments.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/resultAyaListFragment"
+        android:name="com.example.quran.fragments.ResultAyaListFragment"
+        android:label="fragment_result_aya_list"
+        tools:layout="@layout/fragment_result_aya_list" >
+        <action
+            android:id="@+id/action_resultAyaListFragment_to_ayaDetailFragment2"
+            app:destination="@id/ayaDetailFragment2" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.quran.models.Racine" />
+    </fragment>
+</navigation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"القرآن الكريم "</string>
+    <string name="open">افتح</string>
+    <string name="close">غلق</string>
+    <string name="settings">اعدادات</string>
+    <string name="profile">الحساب الشخصي</string>
+    <string name="communicate">تواصل</string>
+    <string name="share">مشاركة</string>
+    <string name="rate_us">تقييم</string>
+    <string name="index">الفهرس</string>
+    <string name="arabic_roots">الجذور العربية</string>
+    <string name="verses_ayat">الآيات</string>
+    <string name="favorite">المفضلة</string>
+    <string name="login">تسجيل الدخول</string>
+</resources>
