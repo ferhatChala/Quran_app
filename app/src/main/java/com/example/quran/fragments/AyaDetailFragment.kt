@@ -34,6 +34,7 @@ class AyaDetailFragment() : Fragment() {
 
         //get aya
 
+        var indexAya:Int
          mRacineViewModel = ViewModelProvider(this).get(RacineViewModel::class.java)
          mRacineViewModel.getVersetById(args.currentItem.Id_Aya).observe(viewLifecycleOwner, Observer { aya ->
             //Toast.makeText(requireContext(),aya.Text_AR, Toast.LENGTH_LONG).show()
@@ -45,11 +46,18 @@ class AyaDetailFragment() : Fragment() {
              mRacineViewModel.getSurahById(aya.IdSourat).observe(viewLifecycleOwner, Observer { surah ->
                  view.nomSourat.setText(surah.NomSourat)
              })
+
+             mRacineViewModel.getSurahById(aya.IdSourat-1).observe(viewLifecycleOwner, Observer { surah ->
+                 
+             })
          })
 
 
 
+
+
         
+
 
         view.fav.setOnClickListener {
             view.fav.setImageResource(R.drawable.ic_favorit_full)
@@ -58,7 +66,7 @@ class AyaDetailFragment() : Fragment() {
 
         view.listen_aya.setOnClickListener {
             Toast.makeText(requireContext(),"not implemented yet ",Toast.LENGTH_SHORT).show()
-          //playAudio()
+            playAudio(ayaRef.numAyah.toString())
         }
         view.read_tafssir.setOnClickListener {
             val action = AyaDetailFragmentDirections.actionAyaDetailFragment2ToTafssirFragment2(ayaRef)
@@ -67,9 +75,8 @@ class AyaDetailFragment() : Fragment() {
         return view
     }
 
-    private fun playAudio() {
-        TODO("Not yet implemented")
-        val audioUrl = "https://quranicaudio.com/quran/19"
+    private fun playAudio(id:String) {
+        val audioUrl = "https://cdn.islamic.network/quran/audio/128/ar.alafasy/"+id+".mp3"
         val mPlayer = MediaPlayer()
         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
 
